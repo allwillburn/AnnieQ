@@ -1,7 +1,7 @@
 if GetObjectName(GetMyHero()) ~= "Annie" then return end
 
 local BonusAP = GetBonusAP(myHero)
-local QDmg = 80 + 35 * GetCastLevel(myHero, _Q) + (BonusAP * .8)
+local QDmg = 80 + (35 * GetCastLevel(myHero, _Q)) + (BonusAP * .8)
 local QRange = 650
 
 local AnnieMenu = Menu("Annie", "Annie")
@@ -12,7 +12,7 @@ AnnieMenu.Farm:Boolean("Q", "AutoQ", true)
 OnTick(function (myHero)
  
 BonusAP = GetBonusAP(myHero)
-QDmg = 80 + 35 * GetCastLevel(myHero, _Q) + (BonusAP * .8)
+QDmg = 80 + (35 * GetCastLevel(myHero, _Q)) + (BonusAP * .8)
 
 --Auto Q on minions
     for _, minion in pairs(minionManager.objects) do
